@@ -1,4 +1,4 @@
-import "./header.css";
+import "./status-dot.css";
 import Link from "next/link";
 
 export default function Header() {
