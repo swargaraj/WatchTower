@@ -20,7 +20,7 @@ const StatusCard = ({ title, status, uptime, details }) => {
       </div>
       <div className="flex justify-between items-center mb-2">
         <p className="text-sm font-medium">Uptime</p>
-        <p className="text-gray-500 text-sm">{uptime} - No current issues.</p>
+        <p className="text-gray-500 text-sm">{details}</p>
       </div>
       <div>
         <div className="container bars flex space-x-0.5">
