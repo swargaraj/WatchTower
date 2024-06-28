@@ -16,7 +16,7 @@ const StatusGroup = ({ title, description }) => {
         />
 
         <StatusCard
-          title="API"
+          title="Clusters"
           status="Dead"
           uptime="10.1%"
           details="Major Outage"
@@ -27,6 +27,8 @@ const StatusGroup = ({ title, description }) => {
           status="Down"
           uptime="87.3%"
           details="Degraded Performance"
+          msg="Webhooks are currently experiencing a degraded performance issue, resulting in slow response times. We are investigating the cause and working towards a resolution."
+          z
         />
 
         <StatusCard

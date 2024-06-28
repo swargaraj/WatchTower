@@ -1,7 +1,7 @@
 import Link from "next/link";
-const StatusCard = ({ title, status, uptime, details }) => {
+const StatusCard = ({ title, status, uptime, details, msg }) => {
   return (
-    <div className="border rounded-lg p-4 bg-[#FFFFFF] w-full sm:w-full lg:mb-0 mb-6">
+    <div className="border rounded-lg p-4 bg-[#FFFFFF] w-full sm:w-full lg:mb-0 mb-6 h-fit">
       <div className="flex justify-between items-center mb-2">
         <h3 className="text-lg font-medium">
           <Link href={"/monitor/xyz"}>{title}</Link>
@@ -19,13 +19,16 @@ const StatusCard = ({ title, status, uptime, details }) => {
           {status}
         </span>
       </div>
+      {msg && (
+        <div className="p-3 my-4 bg-indigo-50 rounded-md text-sm">{msg}</div>
+      )}
       <div className="flex justify-between items-center mb-2">
         <p className="text-sm font-medium">Uptime</p>
         <p className="text-gray-500 text-sm">{details}</p>
       </div>
       <div>
         <div className="container bars flex space-x-0.5">
-          {Array.from({ length: 80 }, (_, i) => (
+          {Array.from({ length: 70 }, (_, i) => (
             <div
               key={i}
               className={`bars ${

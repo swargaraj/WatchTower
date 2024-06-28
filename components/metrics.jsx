@@ -1,5 +1,5 @@
 import ResponseTimeCard from "@/components/response-time-card";
-const ResponseTimeGroup = ({ title, description }) => {
+const MetricsGroup = ({ title, description }) => {
   return (
     <div className="container mx-auto p-4">
       <div className="mb-6 py-3">
@@ -19,4 +19,4 @@ const ResponseTimeGroup = ({ title, description }) => {
   );
 };
 
-export default ResponseTimeGroup;
+export default MetricsGroup;
