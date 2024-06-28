@@ -6,15 +6,13 @@ import { AreaChart } from "@tremor/react";
 const data = [
   ...Array.from({ length: 60 }, (_, i) => ({
     date: `Jan ${String(i + 23).padStart(2, "0")}`,
-    ResponseTime: Math.floor(Math.random() * 30) + 20,
+    ResponseTime: Math.floor(Math.random() * 5) + 50,
   })),
 ];
 
 const valueFormatter = function (number) {
   return "$ " + new Intl.NumberFormat("us").format(number).toString();
 };
-
-import "./status-dot.css";
 
 const ResponseTimeCard = ({ title, status, latency, details }) => {
   return (
@@ -23,7 +21,7 @@ const ResponseTimeCard = ({ title, status, latency, details }) => {
         <h3 className="text-lg font-medium">{title}</h3>
         <span className="px-3 py-1 border rounded-full text-xs flex items-center">
           <span
-            className={`status-dot ${
+            className={`status-dot w-2 h-2 ${
               status === "Operational"
                 ? "status-up"
                 : status === "Dead"
@@ -40,7 +38,7 @@ const ResponseTimeCard = ({ title, status, latency, details }) => {
       </div>
       <div>
         <AreaChart
-          className="mt-4 h-72"
+          className="mt-4 h-24"
           data={data}
           index="date"
           categories={["ResponseTime"]}
@@ -53,10 +51,10 @@ const ResponseTimeCard = ({ title, status, latency, details }) => {
           valueFormatter={valueFormatter}
         />
       </div>
-      <div classNames="container mt-2">
+      <div className="container mt-2">
         <div className="flex items-center">
           <span className={`pr-2 flex-shrink-0 text-indigo-400 text-xs`}>
-            May
+            July
           </span>
           <div className={`h-px bg-indigo-400  w-full`}></div>
           <span className={`px-2 flex-shrink-0 text-indigo-400 text-xs`}>
@@ -64,7 +62,7 @@ const ResponseTimeCard = ({ title, status, latency, details }) => {
           </span>
           <div className={`h-px bg-indigo-400  w-full`}></div>
           <span className={`pl-2 flex-shrink-0 text-indigo-400  text-xs`}>
-            July
+            Last 24 Hours
           </span>
         </div>
       </div>

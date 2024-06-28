@@ -1,13 +1,14 @@
-import "./status-dot.css";
-
+import Link from "next/link";
 const StatusCard = ({ title, status, uptime, details }) => {
   return (
     <div className="border rounded-lg p-4 bg-[#FFFFFF] w-full sm:w-full lg:mb-0 mb-6">
       <div className="flex justify-between items-center mb-2">
-        <h3 className="text-lg font-medium">{title}</h3>
+        <h3 className="text-lg font-medium">
+          <Link href={"/monitor/xyz"}>{title}</Link>
+        </h3>
         <span className="px-3 py-1 border rounded-full text-xs flex items-center">
           <span
-            className={`status-dot ${
+            className={`status-dot w-2 h-2 ${
               status === "Operational"
                 ? "status-up"
                 : status === "Dead"
@@ -38,10 +39,10 @@ const StatusCard = ({ title, status, uptime, details }) => {
           ))}
         </div>
       </div>
-      <div class="container mt-2">
-        <div class="flex items-center">
+      <div className="container mt-2">
+        <div className="flex items-center">
           <span
-            class={`pr-2 flex-shrink-0 ${
+            className={`pr-2 flex-shrink-0 ${
               status === "Operational"
                 ? "text-green-400"
                 : status === "Dead"
@@ -52,7 +53,7 @@ const StatusCard = ({ title, status, uptime, details }) => {
             May
           </span>
           <div
-            class={`h-px ${
+            className={`h-px ${
               status === "Operational"
                 ? "bg-green-400"
                 : status === "Dead"
@@ -61,7 +62,7 @@ const StatusCard = ({ title, status, uptime, details }) => {
             } w-full`}
           ></div>
           <span
-            class={`px-2 flex-shrink-0 ${
+            className={`px-2 flex-shrink-0 ${
               status === "Operational"
                 ? "text-green-400"
                 : status === "Dead"
@@ -72,7 +73,7 @@ const StatusCard = ({ title, status, uptime, details }) => {
             {uptime}
           </span>
           <div
-            class={`h-px ${
+            className={`h-px ${
               status === "Operational"
                 ? "bg-green-400"
                 : status === "Dead"
@@ -81,7 +82,7 @@ const StatusCard = ({ title, status, uptime, details }) => {
             } w-full`}
           ></div>
           <span
-            class={`pl-2 flex-shrink-0 ${
+            className={`pl-2 flex-shrink-0 ${
               status === "Operational"
                 ? "text-green-400"
                 : status === "Dead"

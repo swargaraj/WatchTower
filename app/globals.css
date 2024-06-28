@@ -1,3 +1,40 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+    --status-online-color: 0, 209, 108;
+    --status-down-color: 255, 224, 87;
+    --status-dead-color: 255, 87, 87;
+}
+
+.status-dot {
+    display: inline-block;
+    border-radius: 999px;
+    animation: pulse-animation 1.8s infinite;
+}
+
+.status-up {
+    background-color: rgb(var(--status-online-color));
+    box-shadow: 0 0 5px 2px rgba(var(--status-online-color), 0.5);
+}
+
+.status-down {
+    background-color: rgb(var(--status-down-color));
+    box-shadow: 0 0 5px 2px rgba(var(--status-down-color), 0.5);
+}
+
+.status-dead {
+    background-color: rgb(var(--status-dead-color));
+    box-shadow: 0 0 5px 2px rgba(var(--status-dead-color), 0.5);
+}
+
+@keyframes pulse-animation {
+    0% {
+        box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+    }
+
+    100% {
+        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+    }
+}
